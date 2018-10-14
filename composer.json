@@ -1,0 +1,10 @@
+{
+    "name": "daniel/proyecto9-uoc",
+    "description": "Proyecto Anakatis",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Anakatis\\": "src/"
+        }
+    }
+}
