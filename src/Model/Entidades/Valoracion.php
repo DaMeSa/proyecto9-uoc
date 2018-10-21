@@ -19,4 +19,5 @@ class Valoracion {
     private $idUsuario;
     private $producto;
     
+    
 }

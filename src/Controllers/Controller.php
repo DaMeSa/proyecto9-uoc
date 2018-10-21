@@ -14,4 +14,5 @@ namespace Anakatis\Controllers;
  */
 interface Controller {
     
+    public function action();
 }

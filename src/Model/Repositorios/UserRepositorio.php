@@ -18,11 +18,12 @@ use Anakatis\Model\Entidades\User;
 class UserRepositorio extends AbstractRepositorio {
     //put your code here
     protected function buildEntity($array) {
-        
+        $user = new User();
+        return $user;
     }
 
     protected function setTabla() {
-        
+        return 'usuarios';
     }
 
 }

@@ -8,11 +8,16 @@
 
 namespace Anakatis\Controllers;
 
+use Anakatis\Controllers\Controller;
 /**
  * Description of MainController
  *
  * @author Daniel
  */
-class MainController {
-    //put your code here
+class MainController implements Controller {
+  
+    public function action() {
+        
+    }
+
 }
