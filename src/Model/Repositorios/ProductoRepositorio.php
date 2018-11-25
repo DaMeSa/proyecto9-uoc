@@ -18,13 +18,37 @@ use Anakatis\Model\Entidades\Producto;
 class ProductoRepositorio extends AbstractRepositorio{
     
     
-    protected function buildEntity($array) {
+    
+    public function getProductsByCategoria($idCategoria){
+        $fields = [
+          'id_categoria'=>$idCategoria  
+        ];
+        return $this->getRowsByQuery($fields);
+    }
+    
+    protected function buildEntity(Array $array) {
         $producto = new Producto();
+        $producto->setId($array['id']);
+        $producto->setNombre($array['nombre']);
+        $producto->setDescripcion($array['descripcion']);
+        $producto->setImagen($array['imagen']);
         return $producto;
     }
 
     protected function setTabla() {
         return 'productos';
     }
+
+    protected function deBuildEntity(Producto $entity) {
+        $array = [
+            'id'=>$entity->getId(),
+            'descripcion'=>$entity->getDescripcion(),
+            'nombre'=>$entity->getNombre(),
+            'precio'=>$entity->getPrecio(),
+            'imagen'=>$entity->getImagen()
+        ];
+        return $array;
+    }   
+            
 
 }

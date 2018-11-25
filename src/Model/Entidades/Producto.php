@@ -17,6 +17,9 @@ class Producto {
    
     private $id;
     private $nombre;
+    private $descripcion;
+    private $precio;
+    private $imagen;
     private $categorias = array();
     private $valoraciones = array();
     
@@ -43,5 +46,37 @@ class Producto {
     function setCategorias($categorias) {
         $this->categorias = $categorias;
     }
+    function getValoraciones() {
+        return $this->valoraciones;
+    }
+
+    function setValoraciones($valoraciones) {
+        $this->valoraciones = $valoraciones;
+    }
+    
+    function getDescripcion() {
+        return $this->descripcion;
+    }
+
+    function getPrecio() {
+        return $this->precio;
+    }
+
+    function getImagen() {
+        return $this->imagen;
+    }
+
+    function setDescripcion($descripcion) {
+        $this->descripcion = $descripcion;
+    }
+
+    function setPrecio($precio) {
+        $this->precio = $precio;
+    }
+
+    function setImagen($imagen) {
+        $this->imagen = $imagen;
+    }
+
 
 }

@@ -15,49 +15,66 @@ namespace Anakatis\Model\Entidades;
  */
 class User {
     private $id;
-    private $dni;
-    private $experiencia;
+    private $nombre;
+    private $apodo;
+    private $perfil;
+    private $fechaRegistro;
+    private $valoraciones;
     private $password;
-    private $email;
     
-    public function getId() {
+    function getId() {
         return $this->id;
     }
-    
-    public function setId($id) {
-        $this->id = $id;
-    }
-    function getDni() {
-        return $this->dni;
+
+    function getNombre() {
+        return $this->nombre;
     }
 
-    function setDni($dni) {
-        $this->dni = $dni;
+    function getApodo() {
+        return $this->apodo;
     }
 
-    
-    public function getPassword () {
+    function getPerfil() {
+        return $this->perfil;
+    }
+
+    function getFechaRegistro() {
+        return $this->fechaRegistro;
+    }
+
+    function getValoraciones() {
+        return $this->valoraciones;
+    }
+
+    function getPassword() {
         return $this->password;
     }
 
-    public function setPassword ($password) {
-            $this->password = $password;
+    function setId($id) {
+        $this->id = $id;
     }
 
-    public function getEmail () {
-            return $this->email;
+    function setNombre($nombre) {
+        $this->nombre = $nombre;
     }
 
-    public function setEmail ($email) {
-            $this->email = $email;
-    }
-    
-    
-    public function getExperiencia() {
-            return $this->experiencia;
+    function setApodo($apodo) {
+        $this->apodo = $apodo;
     }
 
-    public function setRol ($experiencia) {
-            $this->experiencia = $experiencia;
+    function setPerfil($perfil) {
+        $this->perfil = $perfil;
+    }
+
+    function setFechaRegistro($fechaRegistro) {
+        $this->fechaRegistro = $fechaRegistro;
+    }
+
+    function setValoraciones($valoraciones) {
+        $this->valoraciones = $valoraciones;
+    }
+
+    function setPassword($password) {
+        $this->password = $password;
     }
 }

@@ -17,12 +17,37 @@ use Anakatis\Model\Entidades\Categoria;
  */
 class CategoriaRepositorio extends AbstractRepositorio{
     
-    protected function buildEntity($array) {
+    private $productosRepositorio;
+    
+    public function __construct() {
+        parent::__construct();
+        $this->productosRepositorio = new ProductoRepositorio();
+    }
+    
+    protected function buildEntity(Array $array) {
         $categoria = new Categoria();
+        $categoria->setId($array['id']);
+        $categoria->setJugadores($array['jugadores']);
+        $categoria->setTema($array['tema']);
+        $categoria->setTipo($array['tipo']);
+        $categoria->setModo($array['modo']);
+     
+        return $categoria;
     }
 
     protected function setTabla() {
         return 'categorias';
+    }
+
+    protected function deBuildEntity(Categoria $entity) {
+        $array = [
+            'id'=>$entity->getId(),
+            'tipo'=>$entity->getTipo(),
+            'modo'=>$entity->getModo(),
+            'tema'=>$entity->getTema(),
+            'jugadores'=>$entity->getJugadores()
+        ];
+        return $array;
     }
 
 }

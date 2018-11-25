@@ -7,7 +7,7 @@
  */
 
 namespace Anakatis\Model\Repositorios;
-
+use Anakatis\Model\Conexion;
 /**
  * Description of AbstractRepositorio
  *
@@ -50,7 +50,11 @@ abstract class AbstractRepositorio {
         
     }
     
-    
+        
+    public function insertEntity($entity){
+        $fields = $this->deBuildEntity($entity);
+        return $this->insertRows($fields);
+    }
     
     
     public function insertRows($fields) {
@@ -186,7 +190,15 @@ abstract class AbstractRepositorio {
         $enchufe = new Conexion();
         return $enchufe->delete($sql);
     }
-
+    /**
+     * Recibe un array asociado con los campos de base de datos
+     */
     abstract protected function buildEntity($array);
+    
+    /**
+     * Recibe un objeto propio del repositorio, tiene que devolver un array asociado con los campos en base
+     * de datos
+     */
+    abstract protected function deBuildEntity($entity);
     abstract protected function setTabla();
 }

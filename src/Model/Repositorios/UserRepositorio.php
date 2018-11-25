@@ -16,14 +16,36 @@ use Anakatis\Model\Entidades\User;
  * @author Daniel
  */
 class UserRepositorio extends AbstractRepositorio {
-    //put your code here
-    protected function buildEntity($array) {
+   
+    private $repositorioValoraciones;
+    
+    public function __construct() {
+        parent::__construct();
+        $this->repositorioValoraciones = new ValoracionRepositorio();
+    }
+    protected function buildEntity(Array $array) {
         $user = new User();
+        $user->setId($array['id']);
+        $user->setNombre($array['nombre']);
+        $user->setPassword($array['password']);
+        $user->setPerfil($array['perfil']);
+        $user->setFechaRegistro($array['fetch_reg']);
         return $user;
     }
 
     protected function setTabla() {
         return 'usuarios';
+    }
+
+    protected function deBuildEntity(User $entity) {
+        $array = [
+            'id'=>$entity->getId(),
+            'nombre'=>$entity->getNombre(),
+            'apodo'=>$entity->getApodo(),
+            'fetch_reg'=>$entity->getFechaRegistro(),
+             'perfil'=>$entity->getPerfil()
+        ];
+        return $array;
     }
 
 }

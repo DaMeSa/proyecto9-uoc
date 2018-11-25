@@ -16,15 +16,15 @@ namespace Anakatis\Model\Entidades;
 class Categoria {
     
     private $id;
-    private $nombre;
+    private $tipo;
+    private $modo;
+    private $tema;
+    private $jugadores;
     private $productos = array();
+    
     
     function getId() {
         return $this->id;
-    }
-
-    function getNombre() {
-        return $this->nombre;
     }
 
     function getProductos() {
@@ -35,13 +35,39 @@ class Categoria {
         $this->id = $id;
     }
 
-    function setNombre($nombre) {
-        $this->nombre = $nombre;
-    }
-
     function setProductos($productos) {
         $this->productos = $productos;
     }
 
+    function getTipo() {
+        return $this->tipo;
+    }
 
+    function getModo() {
+        return $this->modo;
+    }
+
+    function getTema() {
+        return $this->tema;
+    }
+
+    function getJugadores() {
+        return $this->jugadores;
+    }
+
+    function setTipo($tipo) {
+        $this->tipo = $tipo;
+    }
+
+    function setModo($modo) {
+        $this->modo = $modo;
+    }
+
+    function setTema($tema) {
+        $this->tema = $tema;
+    }
+
+    function setJugadores($jugadores) {
+        $this->jugadores = $jugadores;
+    }
 }

@@ -16,13 +16,23 @@ use Anakatis\Model\Repositorios\AbstractRepositorio;
  * @author Daniel
  */
 class ValoracionRepositorio extends AbstractRepositorio{
-    //put your code here
+   
+    
+    public function __construct() {
+        parent::__construct();
+        
+    }
+    
     protected function buildEntity($array) {
         
     }
 
     protected function setTabla() {
         return 'valoraciones';
+    }
+
+    protected function deBuildEntity($entity) {
+        
     }
 
 }
