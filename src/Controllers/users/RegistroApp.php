@@ -6,9 +6,9 @@
  * and open the template in the editor.
  */
 
-namespace MasakiApp\Controller\WebProcess\Users;
-use MasakiApp\Model\Repositorios\UserRepositorio;
-use MasakiApp\Controller\WebProcess\WebProcess;
+namespace Anakatis\Controller\users;
+use Anakatis\Model\Repositorios\UserRepositorio;
+use Anakatis\Controller\WebProcess\WebProcess;
 
 class RegistroApp implements WebProcess {
     

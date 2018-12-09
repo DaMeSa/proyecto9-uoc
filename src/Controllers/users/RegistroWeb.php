@@ -2,15 +2,15 @@
 
 
 
-namespace MasakiApp\Controller\WebProcess\Users;
-use MasakiApp\View\Webs\RegistroView;
-use MasakiApp\Controller\WebProcess\Web\AbstractWeb;
+namespace Anakatis\Controller\users;
+use Anakatis\View\Webs\RegistroView;
+use Anakatis\Controllers\AbstractController;
 /**
  * Description of RegistroWeb
  *
  * @author daniel
  */
-class RegistroWeb extends AbstractWeb {
+class RegistroWeb extends AbstractController {
 
     public function doAction() {
         

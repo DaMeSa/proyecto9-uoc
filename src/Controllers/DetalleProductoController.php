@@ -7,11 +7,12 @@
  */
 
 namespace Anakatis\Controllers;
+
 /**
+ * Description of DetalleProductoController
  *
  * @author Daniel
  */
-interface Controller {
-    
-    public function action();
+class DetalleProductoController {
+    //put your code here
 }

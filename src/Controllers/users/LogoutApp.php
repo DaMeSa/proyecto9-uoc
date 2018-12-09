@@ -6,19 +6,19 @@
  * and open the template in the editor.
  */
 
-namespace Anakatis\Controller\WebProcess\Users;
-use Anakatis\Controller\WebProcess\WebProcess;
+namespace Anakatis\Controller\users;
+use Anakatis\Controllers\AbstractController;
 /**
  * Description of LogoutApp
  *
  * @author daniel
  */
-class LogoutApp implements WebProcess {
+class LogoutApp  extends AbstractController {
     
-    public function action() {
+    public function doAction() {
         
-        if (isset($_SESSION['idUsuario'])) {
-            unset($_SESSION['idUsuario']);
+        if (isset($_SESSION['user'])) {
+            unset($_SESSION['user']);
         }
         header('HTTP/1.1 303 See Other');
         header('Location: http://localhost/');

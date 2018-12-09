@@ -6,16 +6,16 @@
  * and open the template in the editor.
  */
 
-namespace Anakatis\Controller\WebProcess\Users;
+namespace Anakatis\Controller\users;
 use Anakatis\Model\Servicios\ServicioUsuarios;
 use Anakatis\Model\Excepciones\UserNotFoundException;
-use Anakatis\Controller\WebProcess\WebProcess;
+use Anakatis\Controllers\AbstractController;
 /**
  * Description of LoginApp
  *
  * @author daniel
  */
-class LoginApp  implements WebProcess {
+class LoginApp  extends AbstractController {
     
     private $servicioUsuarios;
     
@@ -23,14 +23,14 @@ class LoginApp  implements WebProcess {
         $this->servicioUsuarios = new ServicioUsuarios();
     }
     
-    public function action() {
+    public function doAction() {
         
         $nombre = $_POST["nombre"];
         $password = $_POST["password"];
         
         try {
             $userOnline = $this->servicioUsuarios->loadUserByNameAndPassword($nombre, $password);
-            $_SESSION['idUsuario'] = reset($userOnline)->getId();
+            $_SESSION['user'] = reset($userOnline)->getId();
         } catch (UserNotFoundException $exc) {
              $_SESSION['errorLogin'] = "Error , usuario/contraseña no registrado/a!";
         }

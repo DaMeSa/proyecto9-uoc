@@ -1,8 +1,14 @@
-<?php
+<!DOCTYPE html>
+<html lang="es">
+<head>
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+	<meta charset="utf-8">
+	<title>Anakatis Shop</title>
+
+</head>
+
+<body>
+<header>
+    <h1>Anakatis Shop</h1>
+</header>
 

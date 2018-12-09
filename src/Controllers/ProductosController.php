@@ -7,17 +7,27 @@
  */
 
 namespace Anakatis\Controllers;
-
+use Anakatis\Model\Servicios\ServicioProductos;
+use Anakatis\View\Resolvers\ListadoProductosViewResolver;
 /**
  * Description of ProductosController
  *
+ * Carga todos los productos de la web
  * @author Daniel
  */
-class ProductosController implements Controller{
+class ProductosController extends  AbstractController{
 
+    private $servicioProductos;
+
+    public function __construct() {
+        $this->servicioProductos = new ServicioProductos();
+    }
     
-    public function action() {
+    
+    public function doAction() {
+        $this->contexto['produtos'] = $this->servicioProductos->getAllProductos();
         
+        return new ListadoProductosViewResolver();
     }
 
 }

@@ -29,7 +29,7 @@ abstract class AbstractRepositorio {
         
         $resultado = [];
         foreach ($consulta as $parte) {
-            $resultado[] = $this->crearParte($parte);
+            $resultado[] = $this->buildEntity($parte);
         }
         
         return $resultado; 
