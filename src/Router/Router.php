@@ -13,6 +13,9 @@ use Anakatis\Controllers\ProductosControlleru;
 use Anakatis\Controllers\DetalleProductoController;
 use Anakatis\Controllers\CategoriaController;
 use Anakatis\Controller\users\RegistroApp;
+use Anakatis\Controller\users\LoginApp;
+use Anakatis\Controller\users\RegistroWeb;
+use Anakatis\Controllers\ValorarController;
 /**
  * Description of Router
  *
@@ -27,9 +30,10 @@ class Router {
         switch ($root[3]) {
             case 'registrar':
                 $controller = new RegistroApp();
-                break;c
+                break;
             case 'login':
-                
+                $controller = new LoginApp();
+                break;
             case 'detalle':
                 $controller = new DetalleProductoController();
                 break;
@@ -39,7 +43,12 @@ class Router {
             case 'categoria':
                 $controller = new CategoriaController();
                 break;
-            case 'login':
+            case 'registro':
+                $controller = new RegistroWeb();
+                break;
+            case 'valorar':
+                $controller = new ValorarController();
+                break;
             case '':
                 $controller = new MainController();            
                 break;
