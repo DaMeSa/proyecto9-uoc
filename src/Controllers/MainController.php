@@ -26,7 +26,7 @@ class MainController extends AbstractController{
     
     
     public function doAction() {
-        $this->contexto['produtos'] = $this->servicioProductos->getAllProductos();
+        $this->contexto['productos'] = $this->servicioProductos->getAllProductos();
         
         return new ListadoProductosViewResolver();
     }

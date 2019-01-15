@@ -23,7 +23,7 @@ abstract class AbstractRepositorio {
     }
     //put your code here
     public function getAllRows() {
-        $sql = "SELECT * FROM '$this->tabla'";
+        $sql = "SELECT * FROM $this->tabla";
         $enchufe = new Conexion();
         $consulta = $enchufe->read($sql);
         
@@ -87,7 +87,7 @@ abstract class AbstractRepositorio {
 
     public function getRowsByLikeQuery($fields) {
         
-        $sql = "SELECT * FROM '$this->tabla'";
+        $sql = "SELECT * FROM $this->tabla";
         
         if (count($fields)) {
             $sql .= ' WHERE ';
@@ -123,7 +123,7 @@ abstract class AbstractRepositorio {
     
     public function getRowsByQuery($fields) {
         
-        $sql = "SELECT * FROM '$this->tabla'";
+        $sql = "SELECT * FROM $this->tabla";
         
         if (count($fields)) {
             $sql .= ' WHERE ';
@@ -163,7 +163,7 @@ abstract class AbstractRepositorio {
 
     public function updateRow($fields, $id) {
         
-        $sql = "UPDATE '$this->tabla' SET ";
+        $sql = "UPDATE $this->tabla SET ";
         
         if (count($fields)) {
 

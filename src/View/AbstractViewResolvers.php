@@ -16,8 +16,8 @@ namespace Anakatis\View;
 abstract class AbstractViewResolvers {
 
         
-    const TEMPLATES_FOLDER = '../templates/';
-
+    const TEMPLATES_FOLDER = '/templates/';
+    
     public function getView($contexto) {
         ob_start();// buffer de salida
         $this->chargeHeader($contexto);

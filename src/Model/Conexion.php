@@ -17,7 +17,7 @@ class Conexion {
    private static $enchufe;
     
     const DB_SERVER = 'localhost';
-    const DB_NAME = 'anakatis_bbdd';
+    const DB_NAME = 'anakaris_bbdd';
     const DB_USER = 'root';
     const DB_PASS = '';
     
