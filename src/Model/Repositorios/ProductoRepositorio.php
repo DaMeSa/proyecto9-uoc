@@ -39,7 +39,7 @@ class ProductoRepositorio extends AbstractRepositorio{
         return 'productos';
     }
 
-    protected function deBuildEntity(Producto $entity) {
+    protected function deBuildEntity($entity) {
         $array = [
             'id'=>$entity->getId(),
             'descripcion'=>$entity->getDescripcion(),

@@ -193,7 +193,7 @@ abstract class AbstractRepositorio {
     /**
      * Recibe un array asociado con los campos de base de datos
      */
-    abstract protected function buildEntity($array);
+    abstract protected function buildEntity(Array $array);
     
     /**
      * Recibe un objeto propio del repositorio, tiene que devolver un array asociado con los campos en base

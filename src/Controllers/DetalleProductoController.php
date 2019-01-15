@@ -7,12 +7,24 @@
  */
 
 namespace Anakatis\Controllers;
-
+use Anakatis\Model\Servicios\ServicioProductos;
 /**
  * Description of DetalleProductoController
  *
  * @author Daniel
  */
-class DetalleProductoController {
-    //put your code here
+class DetalleProductoController extends AbstractController implements Controller{
+    
+    private $servicioProductos;
+
+    public function __construct() {
+        $this->servicioProductos = new ServicioProductos();
+    }
+
+    protected function doAction() {
+        $idProducto = $_POST['idProducto'];
+        
+        $this->contexto['producto'] = $this->servicioProductos->getProducto($idProducto);
+    }
+
 }

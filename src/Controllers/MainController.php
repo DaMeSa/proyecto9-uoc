@@ -8,16 +8,27 @@
 
 namespace Anakatis\Controllers;
 
-use Anakatis\Controllers\Controller;
+use Anakatis\View\Resolvers\ListadoProductosViewResolver;
+use Anakatis\Model\Servicios\ServicioProductos;
 /**
  * Description of MainController
  *
  * @author Daniel
  */
-class MainController implements Controller {
+class MainController extends AbstractController{
   
-    public function action() {
+
+    private $servicioProductos;
+
+    public function __construct() {
+        $this->servicioProductos = new ServicioProductos();
+    }
+    
+    
+    public function doAction() {
+        $this->contexto['produtos'] = $this->servicioProductos->getAllProductos();
         
+        return new ListadoProductosViewResolver();
     }
 
 }

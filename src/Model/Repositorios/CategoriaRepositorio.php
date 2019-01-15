@@ -39,7 +39,7 @@ class CategoriaRepositorio extends AbstractRepositorio{
         return 'categorias';
     }
 
-    protected function deBuildEntity(Categoria $entity) {
+    protected function deBuildEntity($entity) {
         $array = [
             'id'=>$entity->getId(),
             'tipo'=>$entity->getTipo(),

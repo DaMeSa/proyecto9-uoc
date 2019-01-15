@@ -23,7 +23,7 @@ class ValoracionRepositorio extends AbstractRepositorio{
         
     }
     
-    protected function buildEntity($array) {
+    protected function buildEntity(Array $array) {
         
     }
 

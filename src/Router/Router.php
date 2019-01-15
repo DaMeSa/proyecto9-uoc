@@ -9,7 +9,7 @@
 namespace Anakatis\Router;
 
 use Anakatis\Controllers\MainController;
-use Anakatis\Controllers\ProductosControlleru;
+use Anakatis\Controllers\ProductosController;
 use Anakatis\Controllers\DetalleProductoController;
 use Anakatis\Controllers\CategoriaController;
 use Anakatis\Controller\users\RegistroApp;
@@ -26,7 +26,7 @@ class Router {
 
         $root = explode("/", $uri );
         $controller = false;
-        
+
         switch ($root[3]) {
             case 'registrar':
                 $controller = new RegistroApp();

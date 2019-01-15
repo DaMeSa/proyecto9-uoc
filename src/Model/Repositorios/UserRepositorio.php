@@ -37,7 +37,7 @@ class UserRepositorio extends AbstractRepositorio {
         return 'usuarios';
     }
 
-    protected function deBuildEntity(User $entity) {
+    protected function deBuildEntity($entity) {
         $array = [
             'id'=>$entity->getId(),
             'nombre'=>$entity->getNombre(),

@@ -26,6 +26,15 @@ class ServicioProductos {
         $this->productoRepositorio = new ProductoRepositorio();
     }
     
+    public function getAllProductos(){
+        return $this->productoRepositorio->getAllRows();
+    }
+    
+    public function getProducto($idProducto){
+        $producto = $this->productoRepositorio->getRow($idProducto);
+        
+        return $producto;
+    }
     
     public function getCategoriaConTodosLosProductos($idCategoria){
         $categoria = $this->categoriaRepositorio->getRow($idCategoria);
